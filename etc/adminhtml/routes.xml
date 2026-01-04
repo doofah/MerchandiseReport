@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MitM2_MerchandiseReport Admin Routes Configuration
+ *
+ * @category  MitM2
+ * @package   MitM2_MerchandiseReport
+ * @author    Maybury IT
+ * @copyright Copyright (c) 2026 Maybury IT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="mitm2_merchandisereport" frontName="mitm2_merchandisereport">
+            <module name="MitM2_MerchandiseReport" before="Magento_Backend"/>
+        </route>
+    </router>
+</config>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * MitM2_MerchandiseReport UI Component Listing
+ *
+ * @category  MitM2
+ * @package   MitM2_MerchandiseReport
+ * @author    Maybury IT
+ * @copyright Copyright (c) 2026 Maybury IT
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">mitm2_merchandisereport_listing.mitm2_merchandisereport_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>mitm2_merchandisereport_columns</spinner>
+        <deps>
+            <dep>mitm2_merchandisereport_listing.mitm2_merchandisereport_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="mitm2_merchandisereport_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">row_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>MitM2_MerchandiseReport::merchandise_report</aclResource>
+        <dataProvider class="MitM2\MerchandiseReport\Ui\Component\DataProvider" name="mitm2_merchandisereport_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>row_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+            <filterRange name="created_at" class="Magento\Ui\Component\Filters\Type\DateRange">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="dataScope" xsi:type="string">created_at</item>
+                        <item name="label" xsi:type="string" translate="true">Date Range</item>
+                        <item name="rangeType" xsi:type="string">date</item>
+                    </item>
+                </argument>
+            </filterRange>
+            <filterInput name="skus">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="dataScope" xsi:type="string">skus</item>
+                        <item name="label" xsi:type="string" translate="true">SKUs (comma-separated)</item>
+                    </item>
+                </argument>
+            </filterInput>
+            <filterInput name="staff_member">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="dataScope" xsi:type="string">staff_member</item>
+                        <item name="label" xsi:type="string" translate="true">Staff Member</item>
+                    </item>
+                </argument>
+            </filterInput>
+        </filters>
+        <exportButton name="export_button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">MitM2_MerchandiseReport/js/grid/export</item>
+                    <item name="options" xsi:type="array">
+                        <item name="csv" xsi:type="array">
+                            <item name="value" xsi:type="string">csv</item>
+                            <item name="label" xsi:type="string" translate="true">CSV</item>
+                            <item name="url" xsi:type="string">mitm2_merchandisereport/report/exportcsv</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </exportButton>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="mitm2_merchandisereport_columns">
+        <column name="row_id">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">#</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="sku">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">SKU</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="product_name">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">Name</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="sales">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">Sales</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="refunds">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">Refunds</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="staff_member">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">Staff Member</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="first_sale_date">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">First Sale Date</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="last_sale_date">
+            <settings>
+                <filter>false</filter>
+                <label translate="true">Last Sale Date</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+    </columns>
+</listing>

@@ -1,0 +1,28 @@
+{
+    "name": "mitm2/merchandisereport",
+    "description": "Merchandise Items by Sales Report for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Maybury IT",
+            "email": "info@mayburyit.com"
+        }
+    ],
+    "require": {
+        "php": "~7.3.0||~7.4.0||~8.1.0",
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-sales": "*",
+        "magento/module-catalog": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MitM2\\MerchandiseReport\\": ""
+        }
+    }
+}

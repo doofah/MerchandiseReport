@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MitM2_MerchandiseReport Admin Menu
+ *
+ * @category  MitM2
+ * @package   MitM2_MerchandiseReport
+ * @author    Maybury IT
+ * @copyright Copyright (c) 2026 Maybury IT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MitM2_MerchandiseReport::merchandise_report"
+             title="Merchandise Items by Sales"
+             module="MitM2_MerchandiseReport"
+             sortOrder="40"
+             parent="MitM2_Core::reports"
+             action="mitm2_merchandisereport/report/index"
+             resource="MitM2_MerchandiseReport::merchandise_report"/>
+    </menu>
+</config>

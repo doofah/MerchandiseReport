@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MitM2_MerchandiseReport Module Configuration
+ *
+ * @category  MitM2
+ * @package   MitM2_MerchandiseReport
+ * @author    Maybury IT
+ * @copyright Copyright (c) 2026 Maybury IT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="MitM2_MerchandiseReport" setup_version="1.0.0">
+        <sequence>
+            <module name="MitM2_Core"/>
+            <module name="Magento_Backend"/>
+            <module name="Magento_Sales"/>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>

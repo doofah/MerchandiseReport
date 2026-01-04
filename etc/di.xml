@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MitM2_MerchandiseReport Dependency Injection Configuration
+ *
+ * @category  MitM2
+ * @package   MitM2_MerchandiseReport
+ * @author    Maybury IT
+ * @copyright Copyright (c) 2025 Maybury IT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Exempt ExportCsv from backend secret URL validation -->
+    <type name="Magento\Backend\App\Request\BackendValidator">
+        <plugin name="mitm2_merchandisereport_backend_validator" type="MitM2\MerchandiseReport\Plugin\BackendValidatorPlugin" sortOrder="100" disabled="false"/>
+    </type>
+</config>
